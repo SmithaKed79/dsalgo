@@ -17,16 +17,18 @@ void bubblesort(vector<int> &arr) {
     int size = arr.size();
     bool isSwapped;
     for(int i = 0; i < size-1; i++) {
-        for(int j = 0; j< size - i -1; j++) {
             isSwapped = false;
+        for(int j = 0; j< size - i -1; j++) {
             if(arr[j]>arr[j+1]) {
                 swap(arr[j+1], arr[j]);
                 isSwapped = true;
+                cout<<isSwapped<<endl;
             }
         }
         if(isSwapped == false) break;
-        printArr(arr);
+        //printArr(arr);
     }
+    //printArr(arr);
 }
 
 void printArr(vector<int> arr) {
