@@ -12,15 +12,19 @@ using std::stringstream;
 using std::swap;
 
 void printArr(vector<int> arr);
-
+// optimizing ---have a isSwapped check flag
 void bubblesort(vector<int> &arr) {
     int size = arr.size();
+    bool isSwapped;
     for(int i = 0; i < size-1; i++) {
         for(int j = 0; j< size - i -1; j++) {
+            isSwapped = false;
             if(arr[j]>arr[j+1]) {
                 swap(arr[j+1], arr[j]);
+                isSwapped = true;
             }
         }
+        if(isSwapped == false) break;
         printArr(arr);
     }
 }
